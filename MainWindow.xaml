@@ -1,0 +1,279 @@
+﻿<Window x:Class="RubiksCube.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Name="RubiksCubeWindow"
+        Title="Rubik's Cube for beginners."
+        Height="680"
+        Width="1100"
+        MinHeight="680"
+        MinWidth="1100"
+        WindowStartupLocation="CenterScreen"
+        MouseLeftButtonDown="OnMouseLeftButtonDown"
+        MouseLeftButtonUp="OnMouseLeftButtonUp">
+    <Grid Name="MainGrid" Loaded="OnMainGridLoaded" SizeChanged="OnMainGridSizeChanged" Background="#FFABBCCB" Margin="0,0,2,1">
+        <Grid Name="CubeGrid"
+              Width="800" Height="540"
+              HorizontalAlignment="Left" VerticalAlignment="Top"
+              Margin="22,99,0,0" Background="#FF8AC6DC"
+              Loaded="OnCubeGridLoaded" />
+        <Label
+			Name="SolveLabel1"
+			Width="264" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="277,37,0,0" Background="#FFFFFFE0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <Label
+			Name="SolveLabel4"
+			Width="64" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="145,68,0,0" Background="#FFFFFFE0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label
+			Name="SolveLabel5"
+			Width="82" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="214,68,0,0" Background="#FFFFFFE0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label
+			Name="SolveLabel6"
+			Width="82" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="302,68,0,0" Background="#FFFFFFE0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label
+			Name="SolveLabel7"
+			Width="92" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="389,68,0,0" Background="#FFFFFFE0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.14,0.654" />
+        <Label
+			Name="SolveLabel8"
+			Width="253" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="486,68,0,0" Background="#FFFFFFE0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <Label
+			Width="146" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="877,105,0,0" Background="#FFFFFFE0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+			Content="Верхняя сторона" />
+        <Button
+			Name="UpFaceButton0"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="847,136,0,0" Background="#FFFFFFFF"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="0"
+			Click="UpFaceButtonClick" />
+        <Button
+			Name="UpFaceButton1"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="885,136,0,0" Background="#FF0000FF"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="1"
+			Click="UpFaceButtonClick" />
+        <Button
+			Name="UpFaceButton2"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="923,136,0,0" Background="#FFFF0000"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="2"
+			Click="UpFaceButtonClick" />
+        <Button
+			Name="UpFaceButton3"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="961,136,0,0" Background="#FF008000"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="3"
+			Click="UpFaceButtonClick" />
+        <Button
+			Name="UpFaceButton4"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="999,136,0,0" Background="#FFFFA500"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="4"
+			Click="UpFaceButtonClick" />
+        <Button
+			Name="UpFaceButton5"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="1037,136,0,0" Background="#FFFFFF00"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="5"
+			Click="UpFaceButtonClick" />
+        <Label
+			Width="160" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="885,177,0,0" Background="#FFFFFFE0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+			Content="Передняя сторона" />
+        <Button
+			Name="FrontFaceButton0"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="847,208,0,0" Background="#FFFFFFFF"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="0"
+			Click="FrontFaceButtonClick" />
+        <Button
+			Name="FrontFaceButton1"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="885,208,0,0" Background="#FF0000FF"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="1"
+			Click="FrontFaceButtonClick" />
+        <Button
+			Name="FrontFaceButton2"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="923,208,0,0" Background="#FFFF0000"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="2"
+			Click="FrontFaceButtonClick" />
+        <Button
+			Name="FrontFaceButton3"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="961,208,0,0" Background="#FF008000"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="3"
+			Click="FrontFaceButtonClick" />
+        <Button
+			Name="FrontFaceButton4"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="999,208,0,0" Background="#FFFFA500"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="4"
+			Click="FrontFaceButtonClick" />
+        <Button
+			Name="FrontFaceButton5"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="1037,208,0,0" Background="#FFFFFF00"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="5"
+			Click="FrontFaceButtonClick" />
+        <Label
+			Name="SetColorHeading"
+			Width="240" Height="26"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="831,268,0,0" Background="#FFFFFFFF"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+			Content="Выбор цвета для ввода" />
+        <Button
+			Name="SetColorButton0"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="894,308,0,0" Background="#FFFFFFFF"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="0"
+			Click="SetColorButtonClick" />
+        <Button
+			Name="SetColorButton1"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="932,308,0,0" Background="#FF0000FF"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="1"
+			Click="SetColorButtonClick" />
+        <Button
+			Name="SetColorButton2"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="970,308,0,0" Background="#FFFF0000"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="2"
+			Click="SetColorButtonClick" />
+        <Button
+			Name="SetColorButton3"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="894,347,0,0" Background="#FF008000"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="3"
+			Click="SetColorButtonClick" />
+        <Button
+			Name="SetColorButton4"
+			Width="34" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="932,347,0,0" Background="#FFFFA500"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="4"
+			Click="SetColorButtonClick" />
+        <Button
+			Name="SetColorButton5"
+			Width="34" Height="33"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="970,347,0,0" Background="#FFFFFF00"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Tag="5"
+			Click="SetColorButtonClick" />
+        <Button
+			Name="SolveStepButton"
+			Width="120" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="952,476,0,0" Background="#FFF0F0F0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Content="Шаг решения"
+			Click="SolveStepButtonClick" />
+        <Button
+			Name="AutoSolveButton"
+			Width="184" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="858,437,0,0" Background="#FFF0F0F0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Content="Автоматическая сборка"
+			Click="AutoSolveButtonClick" />
+        <Button
+			Name="SaveSolutionButton"
+			Width="155" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="873,515,0,0" Background="#FFF0F0F0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Content="Сохранить решение"
+			Click="SaveSolutionButtonClick" />
+        <Button
+			Name="ResetButton"
+			Width="120" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="890,554,0,0" Background="#FFF0F0F0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Content="Сбросить"
+			Click="ResetButtonClick" />
+        <Button
+			Name="UndoButton"
+			Width="120" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="829,476,0,0" Background="#FFF0F0F0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Content="Отмена"
+			Click="UndoButtonClick" />
+        <Button
+			Name="UserCubeButton"
+			Width="184" Height="34"
+			HorizontalAlignment="Left" VerticalAlignment="Top"
+			Margin="858,398,0,0" Background="#FFF0F0F0"
+			FontFamily="Arial" FontSize="14" FontWeight="Bold"
+			Content="Задать куб"
+			Click="UserCubeButtonClick" RenderTransformOrigin="0.51,-1.122" />
+    </Grid>
+</Window>
